@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr';
+
 * {
     margin: 0;
     padding: 0;
@@ -7,4 +9,17 @@
 
 .ml-2 {
     margin-left: 10px;
+}
+
+.mx-auto {
+    max-width: 600px;
+    margin: 10px auto;
+}
+
+.mt-5 {
+    margin-top: 50px;
+}
+
+.mt-1 {
+    margin-top: 10px;
 }
