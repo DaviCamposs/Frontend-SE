@@ -1,11 +1,16 @@
 <nav>
     <div class="nav-wrapper cyan darken-1">
         <a routerLink="/" class="brand-logo ml-2">PickEup</a>
-        <ul class="right hide-on-med-and-down">
+        <ul *ngIf="estaLogado(); else login" class="right hide-on-med-and-down">
             <li><a routerLink="/modulos" ><i class="material-icons">view_module</i></a></li>
             <li><a routerLink="/questionarios"><i class="material-icons">library_books</i></a></li>
             <li><a routerLink="/materiais"><i class="material-icons">play_circle_filled</i></a></li>
-            <li><a><i class="material-icons">logout</i></a></li>
+            <li><a (click)="logout()" ><i class="material-icons">logout</i></a></li>
         </ul>
+        <ng-template #login>
+            <ul class="right hide-on-med-and-down">
+                <li><a routerLink="autenticacao/login" ><i class="material-icons">login</i></a></li>
+            </ul>
+        </ng-template>
     </div>
 </nav>

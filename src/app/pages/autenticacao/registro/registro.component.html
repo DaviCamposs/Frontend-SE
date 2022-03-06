@@ -1,23 +1,31 @@
-<div class="row mx-auto">
-    <div class="col s12">
-        <h2>Registro</h2>
-        <form class="input mt-5">
-            <div class="input-field">
-                <input id="nome" type="text" class="validate">
-                <label for="nome">Nome</label>
+<div class="container">
+    <div class="row">
+        <div class="row mx-auto">
+            <div class="col s12">
+                <h2>Registro</h2>
+                <form [formGroup]="registroFormulario" class="input mt-5">
+                    <div class="input-field">
+                        <input formControlName="nome" id="nome" type="text" class="validate">
+                        <label for="nome">Nome</label>
+                    </div>
+                    <div class="input-field">
+                        <input formControlName="email"  id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                    <div class="input-field">
+                        <input formControlName="senha"  id="senha" type="password" class="validate">
+                        <label for="senha">Senha</label>
+                    </div>
+                    <div class="input-field">
+                        <input formControlName="senha2"  id="senha2" type="password" class="validate">
+                        <label for="senha2">Confirmar Senha</label>
+                    </div>
+                    <button (click)="registrar()" class="mt-1 waves-effect waves-light btn-large btn-registro">Registrar</button>
+                </form>
+                <div routerLink="/autenticacao/Login" class="login center-align mt-5">
+                    <a>Já possui uma conta</a>
+                </div>
             </div>
-            <div class="input-field">
-                <input id="email" type="email" class="validate">
-                <label for="email">Email</label>
-            </div>
-            <div class="input-field">
-                <input id="password" type="password" class="validate">
-                <label for="password">Password</label>
-            </div>
-            <button class="mt-1 waves-effect waves-light btn-large btn-registro">Registrar</button>
-        </form>
-        <div routerLink="/autenticacao/Login" class="login center-align mt-5">
-            <a>Já possui uma conta</a>
         </div>
     </div>
 </div>

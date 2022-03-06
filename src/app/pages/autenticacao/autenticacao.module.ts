@@ -6,6 +6,7 @@ import { AutenticacaoRoutingModule } from './autenticacao-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AutenticacaoService } from './shared/autenticacao.service';
 
 
 @NgModule({
@@ -17,11 +18,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     AutenticacaoRoutingModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot()
   ],
   exports: [
     LoginComponent,
     RegistroComponent
-  ]
+  ],
+  providers: []
 })
 export class AutenticacaoModule { }

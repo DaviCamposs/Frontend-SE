@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
 })
 export class AutenticacaoService {
 
+  logado = false
+
   constructor(private http: HttpClient) { }
 
   registrarUsuario(nome: string , email: string , senha: string): Observable<AutenticacaoResponse> {
@@ -18,4 +20,5 @@ export class AutenticacaoService {
   login(email: string , senha: string): Observable<AutenticacaoResponse> {
     return this.http.post<AutenticacaoResponse>(`${environment.api}/autenticacao/login`, { email , senha })
   }
+
 }
