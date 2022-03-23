@@ -1,12 +1,18 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MateriaisComponent } from './components/materiais/materiais.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    MateriaisComponent
+  ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    RouterModule
+  ],
+  exports: [ MateriaisComponent ]
 })
 export class MateriaisModule { }

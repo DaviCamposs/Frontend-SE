@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h5 class="right-align acertos"> {{getQtdAcertos()}}/{{questionario?.questoes?.length}} acertos</h5>
+            <div *ngFor="let questao of questionario?.questoes; let numero = index" class="questao">
+                <h5>{{questao.enunciado}}</h5>
+                <ul class="collection">
+                    <li [ngClass]="{ 'green': (respostas[numero] == true && respostasIndice[numero] == letra ) || (respostas[numero] == false && letra == getRespostaCerta(numero)  ), 'red': respostas[numero] == false && respostasIndice[numero] == letra }"
+                        *ngFor="let alternativa of questao?.alternativas; let letra = index" class="collection-item"
+                        (click)="verificarResposta(numero,letra)">{{alternativa.resposta}}</li>
+                </ul>
+                <ul *ngIf="respostas[numero] != undefined" class="collapsible" data-collapsible="expandable"
+                    id="collapsed_links">
+                    <li>
+                        <div class="collapsible-header  blue lighten-5"><i
+                                class="material-icons">info</i>{{questao.explicacao}}</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="info">
+                <h6 *ngIf="mostrarFrase()" class="center-align">{{getFrase()}}</h6>
+                <h6 *ngIf="mostrarFrase()" class="acertos center-align"> você acertou {{getQtdAcertos()}} questão(ões) de
+                    {{questionario?.questoes?.length}}</h6>
+                    <a routerLink="questionarios" class="waves-effect waves-light btn">Voltar</a>
+            </div>
+        </div>
+    </div>
+</div>

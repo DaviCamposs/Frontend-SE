@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h4>Materiais extras</h4>
+            <div class="row">
+                <a href={{material.link}} *ngFor="let material of materiais">
+                    <div class="col s-4">
+                        <div class="card z-depth-2">
+                            <div class="card-image">
+                                <img src="{{material.imagem}}">
+                            </div>
+                            <div class="card-content">
+                                <p>{{material.descricao}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

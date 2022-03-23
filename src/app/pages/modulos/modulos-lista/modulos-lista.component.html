@@ -1,1 +1,27 @@
-<p>modulos-lista works!</p>
+<div class="container">
+    <div *ngFor="let modulo of modulos" class="row">
+        <div class="col">
+            <div class="info">
+                <h4>{{modulo.nome}}</h4>
+                <p>{{modulo.descricao}}.</p>
+            </div>
+            <div class="row">
+                <div *ngFor="let curso of modulo.cursos" class="col s-3">
+                    <div (click)="redirecionarParaCurso(curso._id)" class="card z-depth-2">
+                        <div class="card-image">
+                            <img src="{{curso.imagem}}">
+                        </div>
+                        <div class="card-content">
+                            <p>{{curso.descricao}}</p>
+                        </div>
+                        <div class="card-action">
+                            <div *ngFor="let tag of curso.tags;let i = index" class="chip {{cores[i]}}">
+                                {{tag}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

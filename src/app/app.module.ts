@@ -1,3 +1,4 @@
+import { MateriaisModule } from './pages/materiais/materiais.module';
 import { SemautenticacaoGuard } from './shared/guards/semautenticacao.guard';
 import { AutenticacaoGuard } from './shared/guards/autenticacao.guard';
 import { SharedModule } from './shared/shared.module';
@@ -11,6 +12,7 @@ import { AppComponent } from './app.component';
 import { AutenticacaoModule } from './pages/autenticacao/autenticacao.module';
 import { ToastrModule } from 'ngx-toastr';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { QuillModule } from 'ngx-quill';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { JwtHelperService } from '@auth0/angular-jwt';
     SharedModule,
     HttpClientModule,
     AutenticacaoModule,
-    ToastrModule.forRoot()
+    MateriaisModule,
+    ToastrModule.forRoot(),
+    QuillModule.forRoot()
   ],
   providers: [AutenticacaoGuard, SemautenticacaoGuard],
   bootstrap: [AppComponent]

@@ -1,0 +1,22 @@
+<div class="container">
+        <div class="col">
+            <div class="row">
+                <div class="info">
+                    <h4>Questionários</h4>
+                </div>
+                <div *ngFor="let questionario of questionarios" class="col s-4">
+                    <div (click)="redirecionarParaQuestionario(questionario._id)" class="card z-depth-2">
+                        <div class="card-image">
+                            <img src="{{questionario.imagem}}">
+                        </div>
+                        <div class="card-action">
+                            <div *ngFor="let tag of questionario.tags;let i = index" class="chip {{cores[i]}}">
+                                {{tag}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
